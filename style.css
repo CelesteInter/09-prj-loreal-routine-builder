@@ -8,9 +8,38 @@
 /* —— body + fonts —— */
 body {
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
-  color: #333;
+  color: #e6e6e6;
   display: flex;
   justify-content: center;
+}
+
+/* h3 */
+h3 {
+  color: #131313;
+}
+
+h1 {
+  color: #252525;
+}
+
+#selectedProductsSection h2 {
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  color: #000;
+  display: flex;
+  justify-content: center;
+}
+
+#selectedProductsSection p {
+  color: #000;
+}
+
+#selectedProductsSection span {
+  color: #000;
+}
+
+.modal-info p {
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  color: #000;
 }
 
 .page-wrapper {
@@ -46,7 +75,7 @@ body {
   width: 100%;
   padding: 16px;
   font-size: 18px;
-  border: 2px solid #000;
+  border: 2px solid #e3a535;
   border-radius: 8px;
   cursor: pointer;
   background-color: white;
@@ -55,13 +84,14 @@ body {
 
 .search-section select:focus {
   outline: none;
-  border-color: #666;
+  border-color: #e3a535;
 }
 
 /* chat section */
 .chatbox {
   margin: 40px 0;
-  border: 2px solid #000;
+  border: 4px solid #e3a535;
+  background-color: #000;
   border-radius: 8px;
   padding: 26px;
 }
@@ -77,7 +107,7 @@ body {
   line-height: 1.5;
   height: 250px;
   overflow-y: auto;
-  background: #fafafa;
+  background: #2b2b2b;
   margin-bottom: 20px;
 }
 
@@ -101,6 +131,7 @@ body {
   flex: 1;
   padding: 12px;
   font-size: 18px;
+  color: #ffffff;
   border: none;
   border-bottom: 2px solid #ccc;
   background: transparent;
@@ -108,13 +139,13 @@ body {
 
 .chat-form input:focus {
   outline: none;
-  border-bottom-color: #000;
+  border-bottom-color: #ff003b;
 }
 
 .chat-form button {
   font-size: 18px;
   background: #000;
-  color: #fff;
+  color: #ff003b;
   border: none;
   padding: 12px;
   width: 48px;
@@ -180,7 +211,7 @@ body {
 
 .product-card {
   flex: 0 1 calc(33.333% - 14px);
-  border: 1px solid #ccc;
+  border: 2px solid #e3a535;
   padding: 15px;
   border-radius: 4px;
   display: flex;
@@ -217,7 +248,8 @@ body {
 .selected-products {
   margin: 40px 0;
   padding: 20px;
-  border: 2px solid #000;
+  border: 4px solid #e3a535;
+  background-color: #000;
   border-radius: 8px;
 }
 
@@ -239,7 +271,7 @@ body {
   font-size: 18px;
   font-weight: 500;
   color: #fff;
-  background: #000;
+  background: #ff003b;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -247,9 +279,195 @@ body {
 }
 
 .generate-btn:hover {
-  background: #666;
+  background: #ff003b;
 }
 
 .generate-btn i {
   margin-right: 8px;
+}
+
+/* Add styling for modal view and buttons */
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+}
+
+.modal img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.modal-info {
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  color: #000;
+}
+
+.modal-info h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.modal-info p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #000;
+}
+
+.add-product {
+  background-color: #e3a535;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-product:hover {
+  background-color: #d18f2c;
+}
+
+.remove-product {
+  background-color: #ff003b;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.remove-product:hover {
+  background-color: #cc0033;
+}
+
+/* Style the add and remove buttons in the modal view */
+
+.modal-info .toggle-product {
+  background-color: #e3a535;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.modal-info .toggle-product:hover {
+  background-color: #d18f2c;
+}
+
+.modal-info .toggle-product.remove {
+  background-color: #ff003b;
+}
+
+.modal-info .toggle-product.remove:hover {
+  background-color: #cc0033;
+}
+
+/* Add styles for the grid of selected product cards */
+
+#selectedProducts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.selected-product-card {
+  border: 2px solid #e3a535;
+  border-radius: 8px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+  background-color: #fff;
+}
+
+.selected-product-image {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.selected-product-info h3 {
+  font-size: 16px;
+  color: #000;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.selected-product-info p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.selected-product-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.selected-product-info .remove-product {
+  margin-top: 10px;
+}
+
+/* Style the clear all selections button */
+
+.clear-btn {
+  background-color: #ff003b;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.clear-btn:hover {
+  background-color: #cc0033;
 }
